@@ -1,6 +1,6 @@
 const inquirer = require("inquirer");
 const fs = require("fs");
-
+const mdGen = require("./generateMarkdown.js")
 inquirer.prompt([
 {
     type: "input",
