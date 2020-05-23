@@ -1,5 +1,5 @@
-# README-GENERATOR
-<img src="https://img.shields.io/apm/l/vim-mode"/>
+# 
+![](https://img.shields.io/badge/LICENSE-MIT-<ORANGE>)
 
 # Description
 
@@ -18,7 +18,7 @@ npm i
 # Usage
 
 # License
-This project is licensed under the MIT license.
+This project is licensed under the license.
 # Contributing
 
 # Tests
