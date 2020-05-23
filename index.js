@@ -1,6 +1,7 @@
 const inquirer = require("inquirer");
 const fs = require("fs");
 const mdGen = require("./generateMarkdown.js")
+
 inquirer.prompt([
 {
     type: "input",
@@ -39,23 +40,29 @@ inquirer.prompt([
 },
 {
     type: "input",
+    message: "What does the user need to know about using the repo?",
+    name: "usage"
+},
+{
+    type: "input",
     message: "What does the user need to know about contributing to the repo?",
     name: "contributing"
 }
 
 ])
 .then(function(answers){
-    fs.writeFile("README.md", JSON.stringify(answers, null, 2), function(err){
-        if (err) {
-            return console.log(err);
-        }
-        console.log("Answers saved.") 
-    })
+    writeToFile("./README.md", answers);
 })
-// function writeToFile(fileName, data) {
-// }
+function writeToFile(fileName, data) {
+    fs.writeFile(fileName, mdGen.generateMarkdown(data), err => {
+        if(err) console(err);
+    })
+}
 
-// function init() {
-// }
+function init() {
+    fs.writeFile("./README.md", "", err => {
+        if(err) console.log(err);
+    })
+}
 
-// init();
+init();
